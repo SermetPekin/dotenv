@@ -11,11 +11,11 @@
 
 ## Installation
 
-Since `dotenv` is a header-only library, there's no need to compile or link any external files. Simply download or clone this repository and include `dotenv.hpp` in your project.
+Since `dotenv` is a header-only library, there's no need to compile or link any external files. Simply download or clone this repository and include `dotenv.h` in your project.
 
 ## Usage
 
-To use `dotenv`, include the `dotenv.hpp` header file in your C++ project. Here’s a quick example.
+To use `dotenv`, include the `dotenv.h` header file in your C++ project. Here’s a quick example.
 
 ### Example `.env` File
 
@@ -30,10 +30,10 @@ DB_PASSWORD=secret
 
 ### Example Code
 
-In your C++ code, include `dotenv.hpp` and use `dotenv` to load and retrieve environment variables.
+In your C++ code, include `dotenv.h` and use `dotenv` to load and retrieve environment variables.
 
 ```cpp
-#include "dotenv.hpp"
+#include "dotenv.h"
 #include <iostream>
 
 int main() {
