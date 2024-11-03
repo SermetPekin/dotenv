@@ -43,7 +43,6 @@ public:
         load(filepath);
     }
 
-    // Function to retrieve environment variables
     std::string get(const std::string& key, const std::string& defaultValue = "") const {
         auto it = envVariables.find(key);
         if (it != envVariables.end()) {
@@ -53,11 +52,9 @@ public:
         return envValue ? envValue : defaultValue;  // Fallback to system environment or default
     }
 
-    // Function to set an environment variable in the current process
     void set(const std::string& key, const std::string& value) {
         envVariables[key] = value;
 
-        // Set environment variable in OS-specific way
         #ifdef _WIN32
             _putenv_s(key.c_str(), value.c_str());
         #else
@@ -68,7 +65,6 @@ public:
 private:
     std::unordered_map<std::string, std::string> envVariables;
 
-    // Helper function to trim whitespace from both ends of a string
     static std::string trim(const std::string& str) {
         auto start = str.find_first_not_of(" \t");
         auto end = str.find_last_not_of(" \t");
@@ -86,10 +82,8 @@ private:
         std::string line;
         while (std::getline(file, line)) {
             line = trim(line);
-            // Skip empty lines or comments
             if (line.empty() || line[0] == '#') continue;
 
-            // Find the position of '='
             size_t delimiterPos = line.find('=');
             if (delimiterPos == std::string::npos) continue; // Skip if no '=' is found
 
@@ -101,7 +95,6 @@ private:
                 value = value.substr(1, value.size() - 2);
             }
 
-            // Insert key-value pair into envVariables map and set it in the OS environment
             envVariables[key] = value;
 
             #ifdef _WIN32
