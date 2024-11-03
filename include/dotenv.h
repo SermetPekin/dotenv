@@ -90,7 +90,6 @@ private:
             std::string key = trim(line.substr(0, delimiterPos));
             std::string value = trim(line.substr(delimiterPos + 1));
 
-            // Strip quotes if they exist around the value
             if (!value.empty() && (value[0] == '"' || value[0] == '\'')) {
                 value = value.substr(1, value.size() - 2);
             }
