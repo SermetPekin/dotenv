@@ -1,3 +1,5 @@
+[![CMake on a single platform](https://github.com/SermetPekin/dotenv/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/SermetPekin/dotenv/actions/workflows/cmake-single-platform.yml)
+
 # dotenv
 
 **dotenv** is a minimalistic, header-only C++ library that brings .env-style environment variable management to your C++ projects, inspired by the simplicity of dotenv in other languages. It’s designed to load, set, and retrieve environment variables, letting you keep configurations out of your code and in a clean, readable .env file. Best of all? No dependencies. It just works.
